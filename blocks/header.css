@@ -1,0 +1,16 @@
+.header__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__logo {
+  margin: 0;
+  width: 173px;
+  height: 33px;
+}
+
+.header__line {
+  margin-top: 41px;
+  width: 100%;
+  height: 1px;
+}
