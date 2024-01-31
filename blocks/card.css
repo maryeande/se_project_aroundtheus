@@ -1,7 +1,3 @@
-.card {
-  padding-top: 47.25px;
-}
-
 .card__list {
   display: grid;
   justify-content: center;
@@ -55,10 +51,4 @@
 
 .card__like-button:hover {
   opacity: 0.5;
-}
-
-@media screen and (max-width: 600px) {
-  .card {
-    padding-top: 36px;
-  }
 }
