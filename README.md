@@ -18,7 +18,7 @@ This Around the U.S. webpage is the third project in the Software Engineering pr
 - Positioning
 - Flat BEM file structure
 
-  **Figma**
+- **Figma**
 
 - [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)
 
@@ -29,4 +29,4 @@ This Around the U.S. webpage is the third project in the Software Engineering pr
 ![Mobile image](./images/Mobile.png)
 
 **Video**
-![Video link](https://vimeo.com/908278887/20de5c5162?ts=2000&share=copy)
+[Video link](https://vimeo.com/908278887/20de5c5162?ts=2000&share=copy)

@@ -10,3 +10,13 @@
   margin: 0;
   padding-top: 67px;
 }
+
+@media screen and (max-width: 600px) {
+  .footer {
+    font-size: 14px;
+  }
+
+  .footer__copyright {
+    padding-top: 47px;
+  }
+}

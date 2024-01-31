@@ -1,4 +1,4 @@
-.cards {
+.card {
   padding-top: 47.25px;
 }
 
@@ -55,4 +55,10 @@
 
 .card__like-button:hover {
   opacity: 0.5;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    padding-top: 36px;
+  }
 }
