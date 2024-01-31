@@ -29,4 +29,4 @@ This Around the U.S. webpage is the third project in the Software Engineering pr
 ![Mobile image](./images/Mobile.png)
 
 **Video**
-[![Video link](https://vimeo.com/908278887/20de5c5162?ts=2000&share=copy/ "Project 3 Video Recording")
+![Video link](https://vimeo.com/908278887/20de5c5162?ts=2000&share=copy/ "Project 3 Video Recording")
