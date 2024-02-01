@@ -4,12 +4,13 @@
   margin: 0 auto;
   padding: 45px 20px 60px;
   font-family: "Inter", Arial, sans-serif;
+  box-sizing: border-box;
+  min-height: 100vh;
 }
 
 .page__content {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 .page__section {
