@@ -62,6 +62,7 @@
 
 .profile__edit-button:hover {
   opacity: 0.6;
+  transition: 0.6s ease-in-out;
 }
 
 .profile__add-button {
@@ -79,6 +80,7 @@
 
 .profile__add-button:hover {
   opacity: 0.6;
+  transition: 0.6s ease-in-out;
 }
 
 @media screen and (max-width: 760px) {

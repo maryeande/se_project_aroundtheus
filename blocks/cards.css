@@ -55,6 +55,7 @@
 
 .cards__like-button:hover {
   opacity: 0.5;
+  transition: 0.6s ease-in-out;
 }
 
 @media screen and (max-width: 600px) {
