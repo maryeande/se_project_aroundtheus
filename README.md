@@ -1,5 +1,7 @@
 # Project 3: Around The U.S.
 
+[Link to Project 3](https://maryeande.github.io/se_project_aroundtheus/)
+
 ### Overview
 
 - Intro

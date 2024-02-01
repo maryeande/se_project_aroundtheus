@@ -88,17 +88,10 @@
 
   .profile__title {
     font-size: 32px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
   }
 
   .profile__description {
     font-size: 16px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 282px;
   }
 
   .profile__add-button {
@@ -127,17 +120,14 @@
   .profile__title {
     text-align: center;
     font-size: 22px;
-    font-style: normal;
     line-height: normal;
     padding-left: 27px;
+    max-width: 224px;
   }
 
   .profile__description {
     text-align: center;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
     width: 100%;
     max-width: 282px;
   }
