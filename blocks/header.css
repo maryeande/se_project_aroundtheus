@@ -1,6 +1,10 @@
 .header__content {
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid #545454;
+  max-width: 880px;
+  width: 100%;
+  height: 74px;
 }
 
 .header__logo {
@@ -9,22 +13,14 @@
   height: 33px;
 }
 
-.header__border-bottom {
-  content: url(../images/Line.svg);
-  margin-top: 41px;
-  width: 880px;
-  width: 100%;
-}
-
 @media screen and (max-width: 600px) {
+  .header__content {
+    height: 56px;
+  }
+
   .header__logo {
     width: 126px;
     height: 24px;
     padding-left: 7px;
-  }
-
-  .header__line {
-    width: 100%;
-    margin-top: 32px;
   }
 }
