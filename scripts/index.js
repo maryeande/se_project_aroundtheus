@@ -75,7 +75,6 @@ profileEditButton.addEventListener("click", () => {
 });
 
 profileModalClose.addEventListener("click", closePopup);
-
 profileEditForm.addEventListener("submit", handleprofileEditSubmit);
 
 initialCards.forEach((cardData) => {
