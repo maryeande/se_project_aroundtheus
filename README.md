@@ -1,6 +1,6 @@
-# Project 3: Around The U.S.
+# Project 4: Around The U.S.
 
-[Link to Project 3](https://maryeande.github.io/se_project_aroundtheus/)
+[Link to Project 4](https://maryeande.github.io/se_project_aroundtheus/)
 
 ### Overview
 
@@ -10,7 +10,7 @@
 
 **Intro**
 
-This Around the U.S. webpage is the third project in the Software Engineering program at TripleTen. The project uses HTML and CSS to create a responsive design so all the elements are displayed correctly on popular screen sizes for desktop, tablet, and mobile devices based on a Figma design.
+This Around the U.S. webpage is the fourth project in the Software Engineering program at TripleTen. The project uses HTML and CSS to create a responsive design so all the elements are displayed correctly on popular screen sizes for desktop, tablet, and mobile devices based on a Figma design. The project also uses JavaScript to add user functionality to the page, including a pop-up modal where users can edit and save profile information.
 
 ## Project features
 
@@ -19,6 +19,7 @@ This Around the U.S. webpage is the third project in the Software Engineering pr
 - Grid layout
 - Positioning
 - Flat BEM file structure
+- JavaScript
 
 - **Figma**
 

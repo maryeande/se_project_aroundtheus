@@ -13,51 +13,6 @@
   margin: 0;
 }
 
-.cards__list-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.cards__image {
-  height: 282px;
-  border-radius: 10px 10px 0 0;
-}
-
-.cards__description {
-  display: flex;
-  background-color: white;
-  color: black;
-  padding: 25px 20px;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 0 0 10px 10px;
-}
-
-.cards__title {
-  margin: 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-}
-
-.cards__like-button {
-  cursor: pointer;
-  background: transparent url(../images/heart-icon.svg) center no-repeat;
-  width: 21px;
-  height: 18px;
-  border: none;
-  flex-shrink: 0;
-}
-
-.cards__like-button:hover {
-  opacity: 0.5;
-  transition: 0.6s ease-in-out;
-}
-
 @media screen and (max-width: 600px) {
   .cards {
     padding-top: 36px;

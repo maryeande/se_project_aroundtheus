@@ -27,6 +27,7 @@
 .profile__title {
   margin: 0;
   padding: 0;
+  max-width: 500px;
   font-size: 42px;
   font-style: normal;
   font-weight: 500;
