@@ -91,6 +91,28 @@ function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
+  const likeButton = cardElement.querySelector(".card__like-button");
+  const deleteButton = cardElement.querySelector(".card__delete-button");
+
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
+  deleteButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
+
+  // add event listener to the delete button
+  //call .remove on html element (cardElement.remove());
+  // same procedure as like button;
+
+  // add a click listener to the  cardImageEl
+  // openModal with the previewImageModal;
+  // add modal into html;
+
+  // go to image element (when open) and change it with the image source in cardImageEl
+
+  // for fade in/out -- read article within article on stackoverflow.
+  // use visibility hidden NOT display none
 
   cardTitleEl.textContent = cardData.name;
   cardImageEl.src = cardData.link;
