@@ -39,8 +39,9 @@ const profileEditForm = profileEditModal.querySelector("#profile-edit-form");
 const cardListEl = document.querySelector(".cards__list");
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardForm = addCardModal.querySelector("#add-card-form");
+const previewImageModal = document.querySelector("#card-image-modal");
 
-// Buttons and DOM nodes
+// Buttons
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileModalClose = profileEditModal.querySelector(
   "#profile-modal-close"
@@ -93,6 +94,14 @@ function getCardElement(cardData) {
   const cardTitleEl = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
   const deleteButton = cardElement.querySelector(".card__delete-button");
+  const previewImageEl = previewImageModal.querySelector(
+    ".modal__preview-image"
+  );
+  const previewTitleEl = previewImageModal.querySelector(
+    ".modal__preview-title"
+  );
+  const previewImageClose =
+    previewImageModal.querySelector("#card-image-close");
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
@@ -100,16 +109,15 @@ function getCardElement(cardData) {
   deleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
-
-  // add event listener to the delete button
-  //call .remove on html element (cardElement.remove());
-  // same procedure as like button;
-
-  // add a click listener to the  cardImageEl
-  // openModal with the previewImageModal;
-  // add modal into html;
-
-  // go to image element (when open) and change it with the image source in cardImageEl
+  cardImageEl.addEventListener("click", () => {
+    previewImageEl.src = cardData.link;
+    previewImageEl.alt = cardData.name;
+    previewTitleEl.textContent = cardData.name;
+    openModal(previewImageModal);
+  });
+  previewImageClose.addEventListener("click", () => {
+    closeModal(previewImageModal);
+  });
 
   // for fade in/out -- read article within article on stackoverflow.
   // use visibility hidden NOT display none
