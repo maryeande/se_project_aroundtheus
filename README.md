@@ -1,6 +1,6 @@
 # Project 5: Around The U.S.
 
-[Link to Project 4](https://maryeande.github.io/se_project_aroundtheus/)
+[Link to Project 5](https://maryeande.github.io/se_project_aroundtheus/)
 
 ### Overview
 
