@@ -30,6 +30,7 @@ const initialCards = [
   },
 ];
 
+// Template
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
@@ -39,7 +40,7 @@ const profileEditForm = profileEditModal.querySelector("#profile-edit-form");
 const cardListEl = document.querySelector(".cards__list");
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardForm = addCardModal.querySelector("#add-card-form");
-const previewImageModal = document.querySelector("#card-image-modal");
+const previewImageModal = document.querySelector("#preview-image-modal");
 
 // Buttons
 const profileEditButton = document.querySelector("#profile-edit-button");
@@ -100,8 +101,9 @@ function getCardElement(cardData) {
   const previewTitleEl = previewImageModal.querySelector(
     ".modal__preview-title"
   );
-  const previewImageClose =
-    previewImageModal.querySelector("#card-image-close");
+  const previewImageClose = previewImageModal.querySelector(
+    "#modal-preview-close"
+  );
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
@@ -118,9 +120,6 @@ function getCardElement(cardData) {
   previewImageClose.addEventListener("click", () => {
     closeModal(previewImageModal);
   });
-
-  // for fade in/out -- read article within article on stackoverflow.
-  // use visibility hidden NOT display none
 
   cardTitleEl.textContent = cardData.name;
   cardImageEl.src = cardData.link;
@@ -141,4 +140,6 @@ addCardForm.addEventListener("submit", handleaddCardFormSubmit);
 addNewCardButton.addEventListener("click", () => openModal(addCardModal));
 addCardModalClose.addEventListener("click", () => closeModal(addCardModal));
 
-initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+initialCards.forEach((cardData) => {
+  cardListEl.append(getCardElement(cardData));
+});
