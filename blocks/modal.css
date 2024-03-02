@@ -86,6 +86,10 @@
 }
 
 @media screen and (max-width: 600px) {
+  .modal {
+    padding: 0;
+  }
+
   .modal__container {
     max-width: 238px;
     padding: 25px 22px;
@@ -106,6 +110,10 @@
   .modal__type_preview {
     max-width: 75vw;
     padding: 0;
+  }
+
+  #modal-preview-container {
+    margin: 0 16px 0 22px;
   }
 
   #modal-preview-close {
