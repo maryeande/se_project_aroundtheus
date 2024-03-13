@@ -66,14 +66,25 @@
               name="title"
               id="profile-title-input"
               placeholder="Title"
+              minlength="2"
+              maxlength="40"
+              required
             />
+            <span class="form__error" id="profile-title-input-error"></span>
             <input
               class="form__input"
               type="text"
               name="description"
               id="profile-description-input"
               placeholder="About me"
+              minlength="2"
+              maxlength="200"
+              required
             />
+            <span
+              class="form__error"
+              id="profile-description-input-error"
+            ></span>
           </fieldset>
           <button class="form__button" type="submit">Save</button>
         </form>
@@ -95,16 +106,28 @@
               name="title"
               id="card-title-input"
               placeholder="Title"
+              minlength="1"
+              maxlength="30"
+              required
             />
+            <span class="form__error" id="card-title-input-error"></span>
             <input
               class="form__input form__input_type_url"
-              type="text"
+              type="url"
               name="url"
               id="card-url-input"
               placeholder="Image URL"
+              required
             />
+            <span class="form__error" id="card-url-input-error"></span>
           </fieldset>
-          <button class="form__button" type="submit">Create</button>
+          <button
+            class="form__button form__button_disabled"
+            type="submit"
+            disabled
+          >
+            Save
+          </button>
         </form>
       </div>
     </div>
@@ -130,5 +153,6 @@
       </li>
     </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
