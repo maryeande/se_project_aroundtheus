@@ -133,10 +133,6 @@ profileEditButton.addEventListener("click", () => {
   profileDescriptionInput.value = profileDescription.textContent;
   openModal(profileEditModal);
 });
-closeButtons.forEach((button) => {
-  const modal = button.closest(".modal");
-  button.addEventListener("click", () => closeModal(modal));
-});
 profileEditForm.addEventListener("submit", handleprofileEditSubmit);
 addCardForm.addEventListener("submit", handleaddCardFormSubmit);
 addNewCardButton.addEventListener("click", () => openModal(addCardModal));
@@ -145,10 +141,13 @@ initialCards.forEach((cardData) => {
   cardListEl.append(getCardElement(cardData));
 });
 
-modals.forEach((modals) => {
-  modals.addEventListener("click", (e) => {
-    if (e.target.classList.contains("modal")) {
-      closeModal(modals);
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (e) => {
+    if (e.target.classList.contains("modal_opened")) {
+      closeModal(modal);
+    }
+    if (e.target.classList.contains("modal__close")) {
+      closeModal(modal);
     }
   });
 });
