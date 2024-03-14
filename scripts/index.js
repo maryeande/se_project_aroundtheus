@@ -120,8 +120,6 @@ function getCardElement(cardData) {
     openModal(previewImageModal);
   });
 
-  closeModal(previewImageModal);
-
   cardTitleEl.textContent = cardData.name;
   cardImageEl.src = cardData.link;
   cardImageEl.alt = cardData.name;
