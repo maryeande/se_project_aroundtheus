@@ -1,3 +1,6 @@
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -30,9 +33,12 @@ const initialCards = [
   },
 ];
 
+const cardData = initialCards;
+
 // Template
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
+const cardSelector = "#card-template";
 
 // Wrappers
 const modals = document.querySelectorAll(".modal");
@@ -79,8 +85,9 @@ function closeModalEscape(e) {
 }
 
 function renderCard(cardData, wrapper) {
-  const cardElement = getCardElement(cardData);
-  wrapper.prepend(cardElement);
+  // const cardElement = getCardElement(cardData);
+  const card = new Card(data, cardSelector);
+  wrapper.prepend(card.getView());
 }
 
 function handleprofileEditSubmit(e) {
@@ -151,3 +158,22 @@ modals.forEach((modal) => {
     }
   });
 });
+
+// Form Validation
+const validationSettings = {
+  formSelector: ".modal__form",
+  inputSelector: ".form__input",
+  submitButtonSelector: ".form__button",
+  inactiveButtonClass: "form__button_disabled",
+  inputErrorClass: "form__input_type_error",
+  errorClass: "form__error_visible",
+};
+
+const editFormValidator = new FormValidator(
+  validationSettings,
+  profileEditForm
+);
+const addFormValidator = new FormValidator(validationSettings, addCardForm);
+
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
