@@ -1,6 +1,6 @@
-# Project 6: Around The U.S.
+# Around The U.S.
 
-[Link to Project 6](https://maryeande.github.io/se_project_aroundtheus/)
+[Link to Project](https://maryeande.github.io/se_project_aroundtheus/)
 
 ### Overview
 
@@ -10,7 +10,7 @@
 
 **Intro**
 
-This Around the U.S. webpage is the sixth project in the Software Engineering program at TripleTen. The project uses HTML and CSS to create a responsive design so all the elements are displayed correctly on popular screen sizes for desktop, tablet, and mobile devices based on a Figma design. The project also uses JavaScript to add user functionality to the page, including pop-up modals where users can edit profile information and add cards according to validation requirements, as well as preview card images, and like or delete cards.
+This Around the U.S. webpage is an ongoing project in the Software Engineering program at TripleTen. The project uses HTML and CSS to create a responsive design so all the elements are displayed correctly on popular screen sizes for desktop, tablet, and mobile devices based on a Figma design. The project also uses JavaScript to add user functionality to the page, including pop-up modals where users can edit profile information and add cards according to validation requirements, as well as preview card images, and like or delete cards.
 
 ## Project features
 
