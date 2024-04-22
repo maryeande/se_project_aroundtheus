@@ -10,15 +10,14 @@
       content="US National Parks, Jacques Cousteau, exploration"
     />
     <meta name="author" content="Mary Anderson" />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="./images/favicon.ico" />
   </head>
   <body class="page">
     <div class="page__content">
       <header class="header page__section">
         <div class="header__content">
           <img
-            src="./images/Vector.svg"
+            src="<%=require('./images/Vector.svg')%>"
             alt="Around the U.S. logo"
             class="header__logo"
           />
@@ -27,7 +26,7 @@
       <main class="content">
         <section class="profile page__section">
           <img
-            src="./images/jacques-cousteau.jpg"
+            src="<%=require('./images/jacques-cousteau.jpg')%>"
             alt="Jacques Cousteau avatar"
             class="profile__image"
           />
@@ -152,6 +151,5 @@
         </div>
       </li>
     </template>
-    <script src="./pages/index.js" type="module"></script>
   </body>
 </html>

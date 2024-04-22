@@ -1,3 +1,4 @@
+import "./index.css";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import PopupWithForm from "../components/PopupWithForm.js";
@@ -31,7 +32,7 @@ const cardUrlInput = addCardModal.querySelector(".form__input_type_url");
 const previewImageEl = previewImageModal.querySelector(".modal__preview-image");
 const previewTitleEl = previewImageModal.querySelector(".modal__preview-title");
 
-// Profile
+// Profile Form
 const userInfo = new UserInfo({
   titleSelector: ".profile__title",
   descriptionSelector: ".profile__description",
@@ -54,13 +55,11 @@ function handleProfileEditSubmit({ title, description }) {
   userInfo.setUserInfo({ title, description });
   profileModal.close();
 }
-// profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
-// Card Modal
+// Card Form
 const cardModal = new PopupWithForm("#add-card-modal", handleAddCardFormSubmit);
 cardModal.setEventListeners();
 
-// addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 addNewCardButton.addEventListener("click", () => cardModal.open());
 
 function handleAddCardFormSubmit({ name, link }) {
