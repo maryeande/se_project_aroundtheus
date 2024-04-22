@@ -26,7 +26,7 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-const cardTitleInput = addCardModal.querySelector(".form__input_type_title");
+const cardTitleInput = addCardModal.querySelector(".form__input_type_name");
 const cardUrlInput = addCardModal.querySelector(".form__input_type_url");
 const previewImageEl = previewImageModal.querySelector(".modal__preview-image");
 const previewTitleEl = previewImageModal.querySelector(".modal__preview-title");
@@ -43,19 +43,6 @@ const profileModal = new PopupWithForm(
 );
 profileModal.setEventListeners();
 
-function handleProfileEditSubmit({ title, description }) {
-  userInfo.setUserInfo({ title, description });
-  profileModal.close();
-}
-
-// function handleProfileEditSubmit(e) {
-//   e.preventDefault();
-//   profileTitle.textContent = profileTitleInput.value;
-//   profileDescription.textContent = profileDescriptionInput.value;
-//   profileEditModal.close();
-//   editFormValidator.toggleButtonState();
-// }
-
 profileEditButton.addEventListener("click", () => {
   const userProfileInfo = userInfo.getUserInfo();
   profileTitleInput.value = userProfileInfo.title;
@@ -63,11 +50,18 @@ profileEditButton.addEventListener("click", () => {
   profileModal.open();
 });
 
+function handleProfileEditSubmit({ title, description }) {
+  userInfo.setUserInfo({ title, description });
+  profileModal.close();
+}
 // profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 // Card Modal
 const cardModal = new PopupWithForm("#add-card-modal", handleAddCardFormSubmit);
 cardModal.setEventListeners();
+
+// addCardForm.addEventListener("submit", handleAddCardFormSubmit);
+addNewCardButton.addEventListener("click", () => cardModal.open());
 
 function handleAddCardFormSubmit({ name, link }) {
   const cardElement = createCard({ name, link });
@@ -76,9 +70,6 @@ function handleAddCardFormSubmit({ name, link }) {
   cardModal.close();
   addFormValidator.disableSubmitButton();
 }
-
-// addCardForm.addEventListener("submit", handleAddCardFormSubmit);
-addNewCardButton.addEventListener("click", () => cardModal.open());
 
 // Image Preview
 const cardPreview = new PopupWithImage("#preview-image-modal");
@@ -104,6 +95,7 @@ const cardSection = new Section(
   },
   ".cards__list"
 );
+
 cardSection.renderItems();
 
 // Form Validation
