@@ -13,23 +13,20 @@ class Popup {
     document.removeEventListener("keydown", this._handleEscClose);
   }
 
-  _handleEscClose(e) {
+  _handleEscClose = (e) => {
     if (e.key === "Escape") {
       this.close();
     }
-  }
+  };
 
   setEventListeners() {
-    this._popupElements = document.querySelectorAll(".modal");
-    this._popupElements.forEach((_popupElement) => {
-      this._popupElement.addEventListener("mousedown", (e) => {
-        if (e.target.classList.contains("modal_opened")) {
-          this.close(_popupElement);
-        }
-        if (e.target.classList.contains("modal__close")) {
-          this.close(_popupElement);
-        }
-      });
+    this._popupElement.addEventListener("mousedown", (e) => {
+      if (e.target.classList.contains("modal_opened")) {
+        this.close();
+      }
+      if (e.target.classList.contains("modal__close")) {
+        this.close();
+      }
     });
   }
 }

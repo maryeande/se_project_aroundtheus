@@ -31,10 +31,11 @@ class FormValidator {
       return this._showInputError(inputElement);
     }
     this._hideInputError(inputElement);
+    console.log(inputElement);
   }
 
   _hasInvalidInput() {
-    return !this._inputElements.every(
+    return !this._inputList.every(
       (inputElement) => inputElement.validity.valid
     );
   }
@@ -57,15 +58,23 @@ class FormValidator {
     }
   }
 
+  resetValidation() {
+    this.toggleButtonState();
+
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement);
+    });
+  }
+
   _setEventListeners() {
-    this._inputElements = [
+    this._inputList = [
       ...this._formElement.querySelectorAll(this._inputSelector),
     ];
     this._submitButton = this._formElement.querySelector(
       this._submitButtonSelector
     );
 
-    this._inputElements.forEach((inputElement) => {
+    this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(inputElement);
         this.toggleButtonState();
