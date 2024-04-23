@@ -31,7 +31,6 @@ class FormValidator {
       return this._showInputError(inputElement);
     }
     this._hideInputError(inputElement);
-    console.log(inputElement);
   }
 
   _hasInvalidInput() {

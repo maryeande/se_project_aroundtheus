@@ -43,7 +43,6 @@ profileEditButton.addEventListener("click", () => {
 function handleProfileEditSubmit({ title, description }) {
   userInfo.setUserInfo({ title, description });
   profileModal.close();
-  profileModal.reset();
 }
 
 // Card Form
