@@ -6,10 +6,8 @@ class Api {
 
   getInitialCards() {
     return fetch(`${this.baseUrl}/cards`, {
-      headers: {
-        authorization: "2f044ea7-089c-4434-a9ef-24932c8b1246",
-        method: "GET",
-      },
+      method: "GET",
+      headers: this.headers,
     })
       .then((res) => res.json())
       .then((result) => {
@@ -20,33 +18,11 @@ class Api {
       });
   }
 
-  renderUserInfo(userData) {
-    const userName = document.querySelector(".profile__title");
-    const userDescription = document.querySelector(".profile__description");
-    const userAvatar = document.querySelector(".profile__image");
-
-    if (userName) {
-      userName.textContent = userData.name;
-    }
-    if (userDescription) {
-      userDescription.textContent = userData.about;
-    }
-    if (userAvatar) {
-      userAvatar.src = userData.link;
-    }
-  }
-
   getUserInfo() {
     return fetch(`${this.baseUrl}/users/me`, {
-      headers: {
-        authorization: "2f044ea7-089c-4434-a9ef-24932c8b1246",
-      },
+      headers: this.headers,
     })
       .then((res) => res.json())
-      .then((userData) => {
-        this.renderUserInfo(userData);
-        return userData;
-      })
       .catch((err) => {
         console.log(err);
       });
@@ -55,10 +31,7 @@ class Api {
   updateProfileInfo(name, about) {
     return fetch(`${this.baseUrl}/users/me`, {
       method: "PATCH",
-      headers: {
-        authorization: "2f044ea7-089c-4434-a9ef-24932c8b1246",
-        "Content-Type": "application/json",
-      },
+      headers: this.headers,
       body: JSON.stringify({
         name,
         about,
@@ -73,65 +46,40 @@ class Api {
   updateAvatar(avatar) {
     return fetch(`${this.baseUrl}/users/me/avatar`, {
       method: "PATCH",
-      headers: {
-        authorization: "2f044ea7-089c-4434-a9ef-24932c8b1246",
-        "Content-Type": "application/json",
-      },
+      headers: this.headers,
       body: JSON.stringify({ avatar }),
     }).then((res) => res.json());
   }
 
-  createNewCard({ name, link }) {
+  addNewCard(data) {
     return fetch(`${this.baseUrl}/cards`, {
       method: "POST",
-      headers: {
-        authorization: "2f044ea7-089c-4434-a9ef-24932c8b1246",
-        "Content-Type": "application/json",
-      },
+      headers: this.headers,
       body: JSON.stringify({
-        name,
-        link,
+        name: data.name,
+        link: data.link,
       }),
-    });
+    }).then((res) => res.json());
   }
 
   deleteCard(cardId) {
     return fetch(`${this.baseUrl}/cards/${cardId}`, {
       method: "DELETE",
-      headers: {
-        authorization: "2f044ea7-089c-4434-a9ef-24932c8b1246",
-        "Content-Type": "application/json",
-      },
+      headers: this.headers,
     });
   }
 
   addLikes(cardId) {
     return fetch(`${this.baseUrl}/cards/${cardId}/likes`, {
       method: "PUT",
-      headers: {
-        authorization: "2f044ea7-089c-4434-a9ef-24932c8b1246",
-        "Content-Type": "application/json",
-      },
+      headers: this.headers,
     });
   }
 
   removeLikes(cardId) {
     return fetch(`${this.baseUrl}/cards/${cardId}/likes`, {
       method: "DELETE",
-      headers: {
-        authorization: "2f044ea7-089c-4434-a9ef-24932c8b1246",
-        "Content-Type": "application/json",
-      },
-    });
-  }
-
-  toggleLike(cardId, isLiked) {
-    return fetch(`${this.baseUrl}/cards/${cardId}/likes`, {
-      method: isLiked ? "DELETE" : "PUT",
-      headers: {
-        authorization: "2f044ea7-089c-4434-a9ef-24932c8b1246",
-        "Content-Type": "application/json",
-      },
+      headers: this.headers,
     });
   }
 }
