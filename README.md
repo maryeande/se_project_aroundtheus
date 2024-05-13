@@ -27,14 +27,14 @@ This Around the U.S. webpage is an ongoing project in the Software Engineering p
 
 **Images**
 
-![Desktop image](./images/Desktop.png)
-![Tablet image](./images/Tablet.png)
-![Mobile image](./images/Mobile.png)
-![Add and like image](./images/add-like-image.png)
-![New card modal](./images/new-card-modal.png)
-![Preview image desktop](./images/preview-desktop.png)
-![Preview image mobile](./images/preview-mobile.png)
-![Validation message](./images/validation-message.png)
+![Desktop image](./src/images/Desktop.png)
+![Tablet image](./src/images/Tablet.png)
+![Mobile image](./src/images/Mobile.png)
+![Add and like image](./src/images/add-like-image.png)
+![New card modal](./src/images/new-card-modal.png)
+![Preview image desktop](./src/images/preview-desktop.png)
+![Preview image mobile](./srcimages/src/preview-mobile.png)
+![Validation message](./src/images/validation-message.png)
 
 **Video**
 [Video link](https://vimeo.com/908278887/20de5c5162?ts=2000&share=copy)
