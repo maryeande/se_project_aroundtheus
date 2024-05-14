@@ -48,13 +48,11 @@ function handleAvatarSubmit(userData) {
     .then(() => {
       console.log(userData);
       userInfo.setUserAvatar(userData.link);
+      editAvatarModal.close();
     })
-    .catch((err) => {
-      console.error(err);
-    })
+    .catch(console.error)
     .finally(() => {
       editAvatarModal.renderLoading(false);
-      editAvatarModal.close();
     });
 }
 
@@ -71,9 +69,7 @@ api
     userInfo.setUserInfo(userData.name, userData.about);
     userInfo.setUserAvatar(userData.avatar);
   })
-  .catch((err) => {
-    console.error(err);
-  });
+  .catch(console.error);
 
 // Profile form
 const profileModal = new PopupWithForm(
@@ -98,9 +94,7 @@ function handleProfileEditSubmit(userData) {
       userInfo.setUserInfo(res.name, res.about);
       profileModal.close();
     })
-    .catch((err) => {
-      console.error(err);
-    })
+    .catch(console.error)
     .finally(() => {
       profileModal.renderLoading(false);
     });
@@ -142,9 +136,7 @@ api
       cardSection.addItem(createCard(card));
     });
   })
-  .catch((err) => {
-    console.error(err);
-  });
+  .catch(console.error);
 
 function handleAddCardFormSubmit(cardData) {
   cardModal.renderLoading(true);
@@ -152,13 +144,11 @@ function handleAddCardFormSubmit(cardData) {
     .addNewCard(cardData)
     .then((res) => {
       cardSection.addItem(createCard(res));
-      cardModal.close();
       addCardForm.reset();
       formValidators["card-form"].disableSubmitButton();
+      cardModal.close();
     })
-    .catch((err) => {
-      console.error(err);
-    })
+    .catch(console.error)
     .finally(() => {
       cardModal.renderLoading(false);
     });
@@ -172,18 +162,14 @@ function handleLikeButton(card) {
       .then(() => {
         card.handleLikeToggle(true);
       })
-      .catch((err) => {
-        console.error(err);
-      });
+      .catch(console.error);
   } else {
     api
       .removeLikes(card._id)
       .then(() => {
         card.handleLikeToggle(false);
       })
-      .catch((err) => {
-        console.error(err);
-      });
+      .catch(console.error);
   }
 }
 
@@ -199,10 +185,9 @@ function handleDeleteButton(card) {
       .deleteCard(card._id)
       .then(() => {
         card.removeCard();
+        deleteModal.close();
       })
-      .catch((err) => {
-        console.error(err);
-      });
+      .catch(console.error);
   });
 }
 

@@ -4,28 +4,24 @@ class Api {
     this.headers = options.headers;
   }
 
+  _checkResponse(res) {
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Error: ${res.status}`);
+  }
+
   getInitialCards() {
     return fetch(`${this.baseUrl}/cards`, {
       method: "GET",
       headers: this.headers,
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        return result;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    }).then(this._checkResponse);
   }
 
   getUserInfo() {
     return fetch(`${this.baseUrl}/users/me`, {
       headers: this.headers,
-    })
-      .then((res) => res.json())
-      .catch((err) => {
-        console.log(err);
-      });
+    }).then(this._checkResponse);
   }
 
   updateProfileInfo(name, about) {
@@ -36,11 +32,7 @@ class Api {
         name,
         about,
       }),
-    })
-      .then((res) => res.json())
-      .catch((err) => {
-        console.log(err);
-      });
+    }).then(this._checkResponse);
   }
 
   updateAvatar(avatar) {
@@ -48,7 +40,7 @@ class Api {
       method: "PATCH",
       headers: this.headers,
       body: JSON.stringify({ avatar }),
-    }).then((res) => res.json());
+    }).then(this._checkResponse);
   }
 
   addNewCard(data) {
@@ -59,28 +51,28 @@ class Api {
         name: data.name,
         link: data.link,
       }),
-    }).then((res) => res.json());
+    }).then(this._checkResponse);
   }
 
   deleteCard(cardId) {
     return fetch(`${this.baseUrl}/cards/${cardId}`, {
       method: "DELETE",
       headers: this.headers,
-    });
+    }).then(this._checkResponse);
   }
 
   addLikes(cardId) {
     return fetch(`${this.baseUrl}/cards/${cardId}/likes`, {
       method: "PUT",
       headers: this.headers,
-    });
+    }).then(this._checkResponse);
   }
 
   removeLikes(cardId) {
     return fetch(`${this.baseUrl}/cards/${cardId}/likes`, {
       method: "DELETE",
       headers: this.headers,
-    });
+    }).then(this._checkResponse);
   }
 }
 
